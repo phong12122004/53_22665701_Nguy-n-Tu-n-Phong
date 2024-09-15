@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0px;
+        margin: 0px auto;
+    }
+    
+    .wrapper {
+        height: 700px;
+        width: 1089px;
+        background-color: white;
+        border-style: solid;
+        border-color: rgb(0, 0, 0);
+    }
+    
+    header {
+        background-color: #2c4d7c;
+        position: relative;
+        height: 150px;
+        width: 100%;
+    }
+    
+    header img {
+        position: absolute;
+        left: 10px;
+        top: 10px;
+    }
+    
+    header h1 {
+        position: absolute;
+        left: 100px;
+        top: 30px;
+        color: white;
+    }
+    
+    header h5 {
+        position: absolute;
+        left: 100px;
+        top: 70px;
+        color: white;
+    }
+    
+    header form {
+        position: absolute;
+        right: 30px;
+        top: 10px;
+    }
+    
+    header form input {
+        color: rgb(255, 255, 255);
+        background-color: darkslategrey;
+    }
+    
+    header form button {
+        background-color: aqua;
+        border-radius: 30%;
+    }
+    
+    header nav {
+        position: absolute;
+        right: 10px;
+        bottom: 0px;
+    }
+    
+    .menu li {
+        list-style-type: none;
+        display: inline-table;
+        background-color: azure;
+        padding-left: 3px;
+        padding-right: 3px;
+        margin: 2px;
+        height: 50px;
+        line-height: 50px;
+    }
+    
+    .menu li a {
+        color: black;
+        text-decoration: none;
+        font-size: 18px;
+    }
+    
+    .menu li:hover {
+        background-color: yellow;
+    }
+    
+    .menu li:hover>a {
+        color: red;
+    }
+    
+    .content {
+        height: 500px;
+        width: 100%;
+        display: flex;
+    }
+    
+    .col1 {
+        background-color: rgb(255, 255, 255);
+        width: 70%;
+        height: 100%;
+        right: 400px;
+    }
+    
+    .up {
+        width: 98%;
+        left: 10px;
+    }
+    
+    .line {
+        border-bottom: dashed;
+        margin-left: 5px;
+        padding-top: 20px;
+        width: 95%;
+    }
+    
+    .col1 .up h2 {
+        padding-top: 20px;
+    }
+    
+    .down {
+        width: 100%;
+        height: 400px;
+        display: flex;
+        padding-top: 10px;
+    }
+    
+    .h1 {
+        width: 55%;
+        height: 200px;
+        margin: 10px;
+    }
+    
+    .h1 p {
+        color: red;
+        text-shadow: green 1px 5px 5px;
+    }
+    
+    .Name {
+        background-color: rgb(255, 255, 255);
+        float: left;
+        padding-top: 10px;
+        padding-right: 30px;
+    }
+    
+    .email {
+        background-color: rgb(255, 255, 255);
+        float: right;
+        padding-top: 10px;
+    }
+    
+    .tele {
+        background-color: rgb(255, 255, 255);
+        float: left;
+        margin-top: 18px;
+    }
+    
+    .sub {
+        background-color: rgb(255, 255, 255);
+        float: right;
+    }
+    
+    .mess {
+        background-color: rgb(255, 255, 255);
+        float: left;
+        padding-right: 30px;
+    }
+    
+    .sp {
+        width: 300px;
+        height: 100px;
+        margin-bottom: 10px;
+    }
+    
+    .su {
+        background-color: rgb(255, 255, 255);
+        margin-right: 10px;
+        width: 50px;
+        height: 20px;
+    }
+    
+    .re {
+        background-color: rgb(255, 255, 255);
+        width: 50px;
+        height: 20px;
+    }
+    
+    .h2 {
+        width: 45%;
+        height: 400px;
+        background-color: rgb(255, 255, 255);
+        margin-right: 40px;
+    }
+    
+    .h2 h3 {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-bottom: dashed;
+    }
+    
+    .col2 {
+        background-color: rgb(189, 189, 189);
+        width: 360px;
+        height: 400px;
+        margin-top: 60px;
+        margin-bottom: 40px;
+        margin-right: 20px;
+    }
+    
+    .col2 h2 {
+        margin-top: 20px;
+        margin-left: 15px;
+        margin-right: 10px;
+        padding-bottom: 10px;
+        border-bottom: dashed;
+    }
+    
+    .col2 img {
+        width: 300px;
+        margin-top: 10px;
+        margin-left: 17px;
+        border-style: solid;
+        border-color: rgb(142, 141, 141);
+        padding: 5px 5px 5px 5px;
+        border-width: 1.5px;
+    }
+    
+    .col2 p {
+        margin-top: 10px;
+        margin-left: 15px;
+        margin-right: 10px;
+    }
+    
+    footer {
+        background-color: #2c4d7c;
+        position: relative;
+        width: 1089px;
+        height: 50px;
+        line-height: 50px;
+        color: white;
+    }
+</style>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <img src="../Bai2/Pic/flower.png" height="100" width="80">
+            <h1> FlowerBox 360</h1>
+            <h5> ...to get your daily close of luxury roses!</h5>
+            <form action="" method="get" id="from1">
+                <input type="search" placeholder="search the site">
+                <button type="submit"> GO </button>
+            </form>
+            <nav>
+                <ul class="menu">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Promotion</a></li>
+                    <li><a href="#">Gift Baskets</a></li>
+                    <li><a href="#">Flowers Services </a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+            </nav>
+
+        </header>
+        <div class=" content ">
+            <div class="col1">
+                <div class="up">
+                    <h2>Why Not Contact Us Today</h2>
+                    <div class="line"></div>
+                </div>
+                <div class="down">
+                    <div class="h1">
+                        <p>For FlowerBox 360 shopers, that means not only can you send your friends and loves ones the highest quality flowers found on online, but thatt you can do so at a great value.</p>
+
+                        <form class="Name">
+                            <label for="name">Name:</label><br>
+                            <input type="text"><br>
+                        </form>
+                        <form class="email">
+                            <label for="email">Email:</label><br>
+                            <input type="text"><br><br>
+                        </form>
+
+
+                        <form class="tele">
+                            <label for="telephone">Telephone:</label><br>
+                            <input type="text"><br>
+                        </form>
+                        <form class="sub">
+                            <label for="subject">Subject:</label><br>
+                            <input type="text"><br><br>
+                        </form>
+                        <form action="" class="mess">
+                            <label for="mess">Message:</label><br>
+                            <input type="text" class="sp">
+                            <button type="submit" class="su"> Submit </button>
+                            <button type="reset" class="re"> Reset </button>
+                        </form>
+
+
+
+                    </div>
+
+                    <div class="h2 ">
+                        <h3>FlowerBox 360 Info!</h3> <br>
+
+                        <p>Openationg Hours: <br> Monday-Friday:9:000am-5:00pm <br> Saturday:9:00am-1.00pm. <br> Sunday:CLosed (No Deliveries)
+                            <br>ORDER ONLINE 24/7</p>
+                        <br><br>
+                        <p> Software Engineering Dept.<br> Information Technology Faculty<br> First Floor, H Building</p>
+                        <br> <br>
+                        <p>12 Nguyen Van Bao, Ward 4,<br> Go Vap District, Ho Chi Minh City<br> Tel: 0283.8940 390<br> Fax: 0283.9940 954</p>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col2 ">
+                <h2> Discount & Specials </h2>
+                <img src="../Bai2/Pic/rose.png ">
+                <p> FlowerBox 360 offers many great discounts throught the year, from coupons and coupon codes, to promo codes and other savings. We also offer military flower discounts to our wonderfull troppps! Read more </p>
+
+
+            </div>
+        </div>
+        <footer>
+            <p>Copycat </p>
+        </footer>
+    </div>
+
+
+
+</body>
+
+</html>

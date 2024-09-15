@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Demo</title>
+</head>
+<style> 
+body{
+        margin:0%;
+    }
+    .boxcenter{
+        width:65%;
+        margin: 0 auto;
+    }
+    .wraper{
+        float:left;
+        width: 100%;
+    }
+    header{
+        background-color:rgb(255, 8, 0) ;
+        min-height: 200px;
+    }
+    nav{
+        background-color:rgb(251, 152, 178);
+        min-height: 50px;
+    }
+    article{
+        float:left;
+        width:70%;
+        background-color:rgb(112, 216, 213);
+        min-height: 350px;
+    }
+    
+    aside{
+        float: left;
+        width:30%;
+        background-color:rgb(54, 153, 51);
+        min-height: 350px;
+    }
+    footer{
+        background-color:rgb(28, 58, 127);
+        min-height: 150px;
+    }</style>
+<body>
+    <div class="boxcenter">
+        <header class="wraper">
+            <p> <br> Header </p> 
+       </header>
+       <nav class="wraper"> </nav>
+       <div class="wraper">
+           <aside> </aside>
+           <article> </article>
+       </div>
+       <footer class="wraper"> <p> Footer </p> </footer>
+    </div>
+</body>
+</html>

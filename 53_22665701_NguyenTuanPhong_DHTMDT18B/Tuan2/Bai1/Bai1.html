@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe Menu</title>
+    <style>
+        * {
+            padding: 0px;
+        }
+        
+        .container {
+            width: 100%;
+            margin: 0 auto;
+            border: 1px solid firebrick;
+        }
+        
+        h1 {
+            color: firebrick;
+            font-style: italic;
+            text-shadow: 8px 10px 0.5px rgb(250, 205, 205);
+            text-align: center;
+            font-size: 40px;
+            text-transform: uppercase;
+        }
+        
+        .nav {
+            background-color: #e68b8b;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            border-top: firebrick 1px solid;
+            margin-top: 20px;
+            height: 50px;
+        }
+        
+        .nav img {
+            height: 25px;
+            width: auto;
+            margin-right: 30px;
+        }
+        
+        .nav a {
+            color: aliceblue;
+            text-decoration: none;
+            margin: 30px;
+        }
+        
+        #g {
+            color: blue;
+            font-size: 28px;
+        }
+        
+        .nav input {
+            margin-left: 30px;
+            height: 20px;
+            border: 1px solid grey;
+            border-radius: 3px;
+            color: black;
+            padding: 4px 10px;
+        }
+        
+        .nav button {
+            margin-left: 10px;
+            height: 30px;
+            width: 35px;
+            border: 1px solid grey;
+            border-radius: 3px;
+        }
+        
+        .content {
+            display: flex;
+            width: 100%;
+        }
+        
+        .menu {
+            display: flex;
+            margin-left: 10px;
+            width: 18%;
+        }
+        
+        .sidebar {
+            width: 200px;
+            margin-right: 10px;
+        }
+        
+        .sidebar p {
+            font-size: 15px;
+            background-color: #eb9696;
+            color: white;
+            border-radius: 50px;
+            margin-bottom: 10px;
+            padding: 8px 10px;
+            text-align: left;
+        }
+        
+        .sidebar img {
+            width: 100%;
+            border-radius: 50%;
+            box-shadow: 10px 10px 10px #E6A9C1;
+        }
+        
+        .main-center {
+            width: 55%;
+        }
+        
+        .main-center h2 {
+            background-color: #e68b8b;
+            color: firebrick;
+            display: flex;
+            justify-content: center;
+            width: 45%;
+            height: 35px;
+            margin-left: 30%;
+            letter-spacing: 10px;
+        }
+        
+        .main-center a {
+            text-decoration: underline;
+            color: red;
+            font-weight: bold;
+            padding: 10px;
+            margin-left: -50px;
+        }
+        
+        .content input {
+            width: 40%;
+            margin-right: 20px;
+            padding: 10px;
+            margin-bottom: 25px;
+            border: 1px solid #C4C4C4;
+        }
+        
+        textarea,
+        select {
+            width: 40%;
+            margin-right: 20px;
+            padding: 10px;
+            margin-bottom: 25px;
+            border: 1px solid #C4C4C4;
+        }
+        
+        select {
+            width: 43%;
+        }
+        
+        textarea {
+            width: 86%;
+            height: 50px;
+        }
+        
+        .radio-form {
+            display: inline-block;
+        }
+        
+        .radio-form input {
+            width: auto;
+        }
+        
+        .content .chon {
+            width: auto;
+            margin-right: 10px;
+            border: 1px solid gray;
+            padding: 10px;
+            background-color: #d9d7d7;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+        
+        .chon:hover {
+            background-color: #f1eeee;
+        }
+        
+        .aside {
+            background-color: #000;
+            color: #fff;
+            padding: 20px;
+            width: 25%;
+            box-sizing: border-box;
+            margin: 15px;
+        }
+        
+        .aside h2 {
+            color: white;
+        }
+        
+        .aside img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        
+        .aside a {
+            color: #eb9696;
+        }
+        
+        .footer {
+            text-align: center;
+            font-size: 18px;
+            background-color: #e68b8b;
+            color: white;
+            font-weight: bold;
+            font-style: italic;
+            height: 50px;
+            padding-top: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1> Example Cafe Menu </h1>
+        <div class="nav">
+            <img src="/BT/Tuan2/Bai1/Pic/icon.png">
+            <p id="g"> | </p>
+            <a href="#Starter"> STARTER </a>
+            <p id="g"> | </p>
+            <a href="#main"> MAIN COURSES </a>
+            <p id="g"> | </p>
+            <a href="#Desserts"> DESSERTS </a>
+            <p id="g"> | </p>
+            <input type="text" placeholder="Search...">
+            <button> Go </button>
+        </div>
+        <div class="content">
+            <div class="menu">
+                <div class="sidebar">
+                    <p> Cafe Latte </p>
+                    <p> Capuchino </p>
+                    <p> Ocean Blue </p>
+                    <p> Ice-cream Cafe </p>
+                    <p> Order Online </p>
+                    <img src="../Bai1/Pic/meeting.png" alt="Group of people">
+                </div>
+            </div>
+            <div class="main-center">
+                <div>
+                    <h2 id="Starter"> Starter </h2>
+                    <ul>
+                        <li> Chestnut and Mushroom Goujons (v) </li>
+                        <li> Goat Cheese Salad (v) </li>
+                        <li> <b style="color:chocolate"> HONEY SOY CHICKEN KEBABS </b> (V) </li>
+                        <li> Seafood Salad (v) </li>
+                    </ul>
+                    <a href="#"> Back to top </a>
+                    <h2 id="Desserts"> Desserts </h2>
+                    <ul>
+                        <li> Lemon Sorbet (v) </li>
+                        <li> Chocolate Mud Pie (v) </li>
+                        <li> Pecan Pie (v) </li>
+                        <li> Selection of Fine Cheeses from Around the World (v) </li>
+                    </ul>
+                    <a href="#"> Back to top </a>
+                    <h2>INFORMATION</h2>
+                </div>
+                <div>
+                    <form action="#" method="post">
+                        <input type="text" name="firstname" placeholder="First Name">
+                        <input type="text" name="lastname" placeholder="Last Name">
+                        <input type="email" name="email" placeholder="Email">
+                        <input type="tel" name="telephone" placeholder="Telephone">
+                        <select name="country">
+                            <option value="USA">USA</option>
+                            <option value="Vietnam">Vietnam</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <div class="radio-form">
+                            <input type="radio" name="nationality" value="vietnamese"> Vietnamese
+                            <input type="radio" name="nationality" value="foreigner"> Foreigner
+                        </div>
+                        <textarea name="comments" placeholder="Comment"></textarea>
+                        <input class="chon" type="submit" value="Submit">
+                        <input class="chon" type="reset" value="Cancel">
+                    </form>
+                </div>
+            </div>
+            <div class="aside">
+                <h2>Events</h2>
+                <h3>Regular Meetings</h3>
+                <img src="./Pic/meeting.png" alt="Event">
+                <p>Host your regular team meetings or activities in the comfort of your own private room. <a href="#">Read more...</a></p>
+                <h3>Product Launches</h3>
+                <img src="./Pic/laucher.png" alt="Product Launch">
+                <p>Launch your product with ease in a space that truly fits its image.<a href="#">Read more...</a></p>
+            </div>
+        </div>
+        <div class="footer">
+            <p>ABC Company &#169; - 12345678 - abccoffee@gmail.com</p>
+        </div>
+    </div>
+</body>
+
+</html>

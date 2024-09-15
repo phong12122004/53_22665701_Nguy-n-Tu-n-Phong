@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bai2</title>
+    <style>
+        * {
+            margin: 0 auto;
+            padding: 0;
+        }
+        
+        .wrapper {
+            width: 1089px;
+            height: 700px;
+            border: 5px solid #ffffff;
+            border-radius: 5px;
+            box-shadow: black 1px 1px 3px 3px;
+        }
+        
+        header {
+            width: 100%;
+            height: 100px;
+            background-image: url(../bai2/background.png);
+        }
+        
+        header img {
+            height: 200px;
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        
+        header h2 {
+            float: inline-end;
+            margin-right: 630px;
+            margin-top: 20px;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav {
+            width: 100%;
+            height: 20px;
+            background-color: #909090;
+        }
+        
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+            margin-left: 10px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+        }
+        
+        .main {
+            width: 100%;
+            height: 550px;
+            display: flex;
+            margin-top: 50px;
+        }
+        
+        .col1 {
+            flex-direction: column;
+            width: 20%;
+            height: 550px;
+        }
+        
+        .col1 .row1 {
+            border-style: solid;
+            border-width: 1px;
+            border-color: #909090;
+            width: 210px;
+            margin-left: 30px;
+        }
+        
+        .row1 img {
+            width: 200px;
+            padding: 5px;
+        }
+        
+        .row1 p {
+            padding-left: 5px;
+            padding-bottom: 5px;
+        }
+        
+        .col1 .row2 {
+            border-style: solid;
+            border-width: 1px;
+            border-color: #909090;
+            width: 210px;
+            margin-top: 50px;
+            margin-left: 30px;
+        }
+        
+        .row2 img {
+            width: 200px;
+            padding: 5px;
+        }
+        
+        .row2 p {
+            padding-left: 5px;
+            padding-bottom: 5px;
+        }
+        
+        .col2 {
+            flex-direction: column;
+            width: 50%;
+            height: 550px;
+            padding-left: 60px;
+            margin-right: 20px;
+        }
+        
+        .col2 .row1 {
+            margin-bottom: 200px;
+        }
+        
+        .col2 h2 {
+            margin-left: 5px;
+        }
+        
+        .col2 .row2 {
+            margin-top: 200px;
+        }
+        
+        .col3 {
+            flex-direction: column;
+            width: 30%;
+            height: 550px;
+            margin-left: 20px;
+        }
+        
+        .col3 .row1 h2 {
+            padding-left: 5px;
+            padding-bottom: 20px;
+        }
+        
+        .col3 .row2 h2 {
+            padding-left: 5px;
+            padding-bottom: 10px;
+            padding-top: 80px;
+        }
+        
+        .col3 .row1 p {
+            margin-bottom: 10px;
+            border-bottom: solid;
+            border-color: rgb(151, 151, 151);
+            border-width: 1px;
+            margin-right: 50px;
+            padding-bottom: 10px;
+        }
+        
+        .footer {
+            width: 100%;
+            height: 30px;
+            background-color: grey;
+        }
+        
+        .footer h6 {
+            color: white;
+            margin-left: 10px;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <header>
+            <img src="../bai2/logo.png" style="height: 80px;" alt="">
+            <h2 style="color:white">YOKO'S KITCHEN <br> JAPANESE COOKING CLASSES</h2>
+        </header>
+        <nav>
+            <ul>
+                <li><a style="color: black;" href="">home</a></li>
+                <li><a href="">classes</a></li>
+                <li><a href="">catering</a></li>
+                <li><a href="">about</a></li>
+                <li><a href="">contact</a></li>
+            </ul>
+        </nav>
+
+
+        <div class="main">
+            <div class="col1">
+                <div class="row1">
+                    <img src="../Bai2/bok choi.jpg" alt="">
+                    <p>Bok Choi</p>
+                </div>
+                <div class="row2">
+                    <img src="../bai2/teriyaki.jpg" height="150px" width="190px" alt="">
+                    <p>Teriyaki Sauce</p>
+                </div>
+            </div>
+
+            <div class="col2">
+                <div class="row1">
+                    <h2>Japanese Vegetarian</h2>
+                    <p style="color: #e7339c;">Five week course in London</p>
+                    <p>A five week introduction to traditional Japanese vegetarian meals, teaching you a selection of rice and noodle dishes.</p>
+                </div>
+                <div class="row2">
+                    <h2>Sauces Masterclass</h2>
+                    <p style="color: #e7339c;">One day workshop</p>
+                    <p>An intensive one-day course looking at how to create the most delicious sauces for use in a range of Japanese cookery.</p>
+                </div>
+            </div>
+            <div class="col3">
+
+                <div class="row1">
+                    <h2 style="color: #e7339c;">Popular Recipies</h2>
+                    <p style="color: #e7339c;">Yakitori (grilled chicken)</p>
+                    <p style="color: #e7339c;">Tsukune (minced chicken patties)</p>
+                    <p style="color: #e7339c;">Okonomiyaki (savory pancakes)</p>
+                    <p style="color: #e7339c;">Mizutaki (chicken stew)</p>
+                </div>
+                <div class="row2">
+                    <h2 style="color: #e7339c;">Contact</h2>
+                    <p>Yoko's Kitchen</p>
+                    <p>27 Redchurch Street</p>
+                    <p>Shoreditch</p>
+                    <p>London E2 7DP</p>
+                </div>
+
+            </div>
+        </div>
+        <div class="footer">
+            <h6>2011 Yoko's Kitchen</h6>
+        </div>
+    </div>
+</body>
+
+</html>
