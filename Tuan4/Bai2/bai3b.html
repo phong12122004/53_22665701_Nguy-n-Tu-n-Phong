@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../Bai2/css/bootstrap.css">
+    <script src="../Bai2/js/bootstrap.js"></script>
+    <style>
+        .container-fluid {
+            position: relative;
+        }
+        
+        .row .nav-link {
+            font-size: 16px;
+            color: white;
+        }
+        
+        #nav2 .nav-link {
+            font-weight: bold;
+            color: grey;
+            border-bottom: 2px solid grey;
+        }
+        
+        #nav2 a:hover {
+            font-weight: bold;
+            color: black;
+            border-bottom: 2px solid orange;
+        }
+        
+        #nav2 a:active {
+            font-weight: bold;
+            color: black;
+            border-bottom: 2px solid orange;
+        }
+        
+        form {
+            position: absolute;
+            top: 35%;
+            right: 9%;
+        }
+        
+        .modal-header .nav-link {
+            color: grey;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .modal-header .nav-link:hover {
+            color: blue;
+            border-bottom: 2px solid orange;
+        }
+        
+        .modal-header .nav-link:active {
+            color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row p-2">
+            <div class="col-9">
+                <img src="../Bai2/hinh/logo.png" alt="logo" height="80px">
+            </div>
+            <div class="col-3 pt-4">
+                <button class="text-secondary btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#myModal2"><img src="../Bai2/hinh/icon person.jpg" alt="icon" class="" width="25%" height="30px">Đăng nhập</button>
+                <span class="language-switcher">
+                    <a href="#" id="vn-btn" style="text-decoration-line: none; color: red; font-weight: bold;">VN</a> | 
+                    <a href="#" id="en-btn" style="text-decoration-line: none; color: black;font-weight: bold;">EN</a>
+                </span>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-12">
+                <ul class="nav bg-dark justify-content-center pt-2 pb-2">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link border-end ms-5 pe-5 pt-0 pb-0">MUA VÉ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link border-end ms-5 pe-5 pt-0 pb-0">PHIM</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link border-end ms-5 pe-5 pt-0 pb-0">GÓC ĐIỆN ẢNH</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link border-end ms-5 pe-5 pt-0 pb-0">SỰ KIỆN</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link border-end ms-5 pe-5 pt-0 pb-0">HỖ TRỢ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link ms-5 pe-5 pt-0 pb-0">THÀNH VIÊN</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="slide" class="carousel pt-3 ps-5 pe-5" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button class="active" data-bs-target="#slide" data-bs-slide-to="0"></button>
+                <button data-bs-target="#slide" data-bs-slide-to="1"></button>
+                <button data-bs-target="#slide" data-bs-slide-to="2"></button>
+                <button data-bs-target="#slide" data-bs-slide-to="3"></button>
+                <button data-bs-target="#slide" data-bs-slide-to="4"></button>
+                <button data-bs-target="#slide" data-bs-slide-to="5"></button>
+                <button data-bs-target="#slide" data-bs-slide-to="6"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="../Bai2/hinh/anh1.jpg " alt="0" class="d-block" width="100%">
+                </div>
+                <div class="carousel-item">
+                    <img src="../Bai2/hinh/anh2.jpg" alt="1" class="d-block" width="100%">
+                </div>
+                <div class="carousel-item">
+                    <img src="../Bai2/hinh/anh3.jpg" alt="2" class="d-block" width="100%">
+                </div>
+                <div class="carousel-item">
+                    <img src="../Bai2/hinh/anh4.jpg" alt="3" class="d-block" width="100%">
+                </div>
+                <div class="carousel-item">
+                    <img src="../Bai2/hinh/anh5.jpg" alt="4" class="d-block" width="100%">
+                </div>
+                <div class="carousel-item">
+                    <img src="../Bai2/hinh/anh6.jpg" alt="5" class="d-block" width="100%">
+                </div>
+                <div class="carousel-item">
+                    <img src="../Bai2/hinh/anh7.jpg" alt="6" class="d-block" width="100%">
+                </div>
+            </div>
+            <button class="carousel-control-prev" data-bs-target="#slide" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" data-bs-target="#slide" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+        <div class="row" id="nav2">
+            <div class="col-12">
+                <ul class="nav mt-3 ps-5">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link me-3 active text-dark">PHIM ĐANG CHIẾU</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link me-3">PHIM SẮP CHIẾU</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link me-3">PHIM IMAX</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row ps-5 pe-5 pt-5">
+            <div class="col-3">
+                <img src="../Bai2/hinh/Transformer Một.jpg" alt="Transformer Một" class="rounded mb-2" width="100%" height="400px">
+                <h5>Transformer Một</h5>
+            </div>
+            <div class="col-3">
+                <img src="../Bai2/hinh/Minh Hôn.jpg" alt="Minh Hôn" class="rounded mb-2" width="100%" height="400px">
+                <h5>Minh Hôn</h5>
+            </div>
+            <div class="col-3">
+                <img src="../Bai2/hinh/Đố Anh Còng Được Tôi.jpg" alt="Đố Anh Còng Được Tôi" class="rounded mb-2" width="100%" height="400px">
+                <h5>Đố Anh Còng Được Tôi</h5>
+            </div>
+            <div class="col-3">
+                <img src="../Bai2/hinh/Noi Tình Yêu Kết Thúc.jpg" alt="Noi Tình Yêu Kết Thúc" class="rounded mb-2" width="100%" height="400px">
+                <h5>Nơi Tình Yêu Kết Thúc</h5>
+            </div>
+        </div>
+        <div class="row ps-5 pe-5 pt-5">
+            <div class="col-3">
+                <img src="../Bai2/hinh/Cám.jpg" alt="Cám" class="rounded mb-2" width="100%" height="400px">
+                <h5>Cám</h5>
+            </div>
+            <div class="col-3">
+                <img src="../Bai2/hinh/Vĩ Cuồng.jpg" alt="Vĩ Cuồng" class="rounded mb-2" width="100%" height="400px">
+                <h5>Vĩ Cuồng</h5>
+            </div>
+            <div class="col-3">
+                <img src="../Bai2/hinh/Cậu Bé Cá Heo.jpg" alt="Cậu Bé Cá Heo" class="rounded mb-2" width="100%" height="400px">
+                <h5>Cậu Bé Cá Heo</h5>
+            </div>
+            <div class="col-3">
+                <img src="../Bai2/hinh/Look Back.jpg" alt="Look Back" class="rounded mb-2" width="100%" height="400px">
+                <h5>Look Back</h5>
+            </div>
+        </div>
+        <footer style="margin-bottom: 40px;">
+            <button class="btn btn-outline-warning mt-5" style="margin-left: 620px">Xem Thêm &gt</button>
+        </footer>
+    </div>
+    <form action="../Bai2/Bai2a.html" class="bg-dark" style="width: 25%; height: 370px; opacity: 0.9; ">
+        <div class="row">
+            <div class="col-6">
+                <h5 style="color: white; background-color: orange;">ĐẶT VÉ NHANH</h5>
+            </div>
+        </div>
+        <div class="row pb-0 mb-0" style="margin-left: 5px; margin-right: 5px; border-bottom: 1px solid white;">
+            <div class="col-12">
+                <ul class="nav justify-content-between">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link text-white" style="text-decoration: none;">Theo giờ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link text-white" style="text-decoration: none;">Theo ngày</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link text-white" style="text-decoration: none;">Theo rạp</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <select class="form-select bg-secondary text-light" style="width: 90%; margin: 20px 15px;">
+            <option selected>Chọn phim</option>
+            <option>Transformer Một</option>
+            <option>Minh Hôn</option>
+            <option>Đố Anh Còng Được Tôi</option>
+            <option>Nơi Tình Yêu Kết Thúc</option>
+            <option>Cám</option>
+            <option>Vĩ Cuồng</option>
+            <option>Cậu Bé Cá Heo</option>
+            <option>Look back</option>
+        </select>
+        <select class="form-select bg-secondary text-light" style="width: 90%; margin: 20px 15px;">
+            <option selected>Chọn rạp</option>
+            <option>Gò vấp</option>
+            <option>Quận 1</option>
+            <option>Quận 2</option>
+        </select>
+        <select class="form-select bg-secondary  text-light" style="width: 90%; margin: 20px 15px;">
+            <option selected>Chọn ngày</option>
+            <option>01/10/2024</option>
+            <option>02/10/2024</option>
+            <option>03/10/2024</option>
+        </select>
+        <select class="form-select bg-secondary text-light" style="width: 90%; margin: 20px 15px;">
+            <option selected>Chọn suất</option>
+            <option>9:00</option>
+            <option>12:00</option>
+            <option>18:00Chiều</option>
+        </select>
+        <button class="btn" style="position: absolute; bottom: 10px; right: 10px; background-color: orange; color: white; border: none;">MUA VÉ</button>
+    </form>
+    <div id="myModal1" class="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <button class="nav-link active" data-bs-toggle="modal" data-bs-target="#myModal2">ĐĂNG NHẬP</button>
+                        </li>
+                        <span class="mt-2">/</span>
+                        <li class="nav-item">
+                            <button class="nav-link " data-bs-toggle="modal" data-bs-target="#myModal1">ĐĂNG KÝ</button>
+                        </li>
+                    </ul>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Họ tên">
+                    </div>
+                    <div class=" row mb-3">
+                        <div class="col-6">
+                            <input type="text" class="form-control" placeholder="Số điện thoại">
+                        </div>
+                        <div class="col-6">
+                            <select class="form-select">
+                                <option selected>Chọn giới tính</option>
+                                <option value="1">Nam</option>
+                                <option value="0">Nữ</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Email">
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-6">
+                            <input type="text" class="form-control" placeholder="Mật khẩu">
+                        </div>
+                        <div class="col-6">
+                            <input type="text" class="form-control" placeholder="Xác nhận mật khẩu">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-6">
+                            <select class="form-select">
+                                <option selected>Chọn thành phố</option>
+                                <option value="1">Thành phố Hồ Chí Minh</option>
+                                <option value="2">Dà Nẵng</option>
+                                <option value="3">Hà Nội</option>
+                            </select>
+                        </div>
+                        <div class="col-6">
+                            <select class="form-select">
+                                <option selected>Quận</option>
+                                <option value="1">Quận 1</option>
+                                <option value="2">Quận Gò Vấp</option>
+                                <option value="3">Quận 12</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Địa chỉ">
+                    </div>
+                    <div class="mb-3">
+                        <input type="date" class="form-control" placeholder="Chọn ngày (dd/mm/yyyy)">
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-4">
+                            <img src="../Bai2/hinh/capcha.png" alt="capcha" class="img-fluid">
+                        </div>
+                        <div class="col-8">
+                            <input type="text" class="form-control" placeholder="Nhập mã Capcha">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <input type="checkbox" class="form-check-input" id="acceptPolicy" checked>
+                        <label class="form-check-label" for="acceptPolicy">Tôi đã đọc và đồng ý với <a href="#" style="font-weight: bold; text-decoration: none; color: orange;">CHÍNH SÁCH</a> của chương trình.</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="col-12">
+                        <button class="btn w-100" style="background-color: orange; color: white;">ĐĂNG KÝ</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="myModal2" class="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <button class="nav-link active" data-bs-toggle="modal" data-bs-target="#myModal2">ĐĂNG NHẬP</button>
+                        </li>
+                        <span class="mt-2">/</span>
+                        <li class="nav-item">
+                            <button class="nav-link " data-bs-toggle="modal" data-bs-target="#myModal1">ĐĂNG KÝ</button>
+                        </li>
+                    </ul>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <p class="text-dark">Vui lòng đăng nhập trước khi mua vé để tích lũy điểm, cơ hội nhận thêm nhiều ưu đãi từ chương trình thành viên Galaxy Cinema</p>
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Email">
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Mật khẩu">
+                    </div>
+                    <div class="mb-3">
+                        <a href="#" style="text-decoration: none;">Quên mật khẩu?</a>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="col-12">
+                        <button class="btn w-100" style="background-color: orange; color: white;">ĐĂNG NHẬP</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
