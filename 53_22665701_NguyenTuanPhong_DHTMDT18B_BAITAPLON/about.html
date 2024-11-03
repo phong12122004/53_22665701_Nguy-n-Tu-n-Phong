@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>LifeSure - Life Insurance Website Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:slnt,wght@-10..0,100..900&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link rel="stylesheet" href="lib/animate/animate.min.css" />
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Modal with Login and Registration Forms -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Xin chào Quý khách!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Login Form -->
+                    <div id="loginForm">
+                        <h3>ĐĂNG NHẬP</h3>
+                        <form>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" id="usernameL" placeholder="Tên đăng nhập" required>
+                            </div>
+                            <div class="mb-3 position-relative">
+                                <input type="password" class="form-control" id="passwordL" placeholder="Mật khẩu" required>
+
+                            </div>
+                            <button type="button" class="btn btn-primary" id="btndn">Đăng nhập</button>
+                        </form>
+                        <div class="mt-3 links">
+                            <a onclick="showRegisterForm()" style="cursor: pointer" class="nav-item">Quý khách chưa đăng ký tài khoản? Đăng ký</a>
+                        </div>
+                    </div>
+
+                    <!-- Registration Form -->
+                    <div id="registerForm" style="display: none;">
+                        <h3>ĐĂNG KÝ</h3>
+                        <form>
+                            <div class="mb-3" id="ref">
+                                <input type="text" class="form-control" id="username" placeholder="Tên đăng nhập" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" id="phone" placeholder="Số điện thoại" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" class="form-control" id="email" placeholder="Email" required>
+                            </div>
+                            <div class="mb-3 position-relative">
+                                <input type="password" class="form-control" id="password" placeholder="Mật khẩu" required>
+
+                            </div>
+                            <div class="mb-3 position-relative">
+                                <input type="text" class="form-control" id="repassword" placeholder="Nhập lại mật khẩu" required>
+
+                            </div>
+                            <button type="button" class="btn btn-primary" id="btndk">Đăng ký</button>
+                        </form>
+                        <div class="mt-3 links">
+                            <a onclick="showLoginForm()" style="cursor: pointer" class="nav-item">Quay lại Đăng nhập</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid nav-bar px-0 px-lg-4 py-lg-0">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a href="index.html" class="navbar-brand p-0">
+                    <h1 class="text-primary mb-0"><i class="fab fa-slack me-2"></i> InsureCare</h1>
+                    <!-- <img src="img/logo.png" alt="Logo"> -->
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                        <span class="fa fa-bars"></span>
+                    </button>
+                <div class="collapse navbar-collapse " id="navbarCollapse">
+                    <div class="navbar-nav w-100 mx-auto d-flex align-items-center justify-content-between ">
+                        <a href="index.html" class="nav-item nav-link  ">Trang chủ</a>
+                        <a href="service.html" class="nav-item nav-link">Dịch vụ</a>
+                        <a href="blog.html" class=" nav-item nav-link">Blog</a>
+                        <a href="about.html" class=" nav-item nav-link active ">About us</a>
+                        <a href="contact.html" class="nav-item nav-link">Liên hệ</a>
+                        <div class="nav-btn">
+                            <input type="text" class="form-control">
+                            <button class="btn-search btn btn-primary btn-md-square rounded-circle flex-shrink-0" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search"></i></button>
+                        </div>
+
+                        <a href="#" id="btndndk" class="nav-item nav-link">Đăng nhập/đăng kí <i class="bi bi-person-circle"></i></a>
+                    </div>
+                </div>
+                <a href="book.html"><button class="btn-link btn btn-primary mx-3 ">Mua ngay !</button></a>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar & Hero End -->
+
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-breadcrumb">
+        <div class="container text-center py-5" style="max-width: 900px;">
+            <h1 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">About InsurCare</h1>
+        </div>
+    </div>
+    <!-- Header End -->
+
+
+    <!-- About Start -->
+    <div class="container-fluid bg-light about py-5">
+        <div class="container py-5">
+
+            <div class="col-xl-12 wow fadeInLeft" data-wow-delay="0.2s">
+                <div class="about-item-content bg-white rounded p-5 h-100">
+                    <h4 class="text-primary">Về chúng tôi</h4>
+                    <h1 class="display-4 mb-4">Insurcare </h1>
+                    <p>Chào mừng quý khách đến với Insurcare – nơi bảo vệ tương lai và mang đến sự an tâm cho quý khách hàng. Chúng tôi tự hào là một trong những công ty bảo hiểm hàng đầu, cam kết cung cấp các giải pháp bảo hiểm đa dạng và phù hợp với nhu
+                        cầu của từng cá nhân và tổ chức. Với sứ mệnh là bảo vệ tài sản, sức khỏe và an ninh tài chính của quý khách hàng, chúng tôi luôn nỗ lực không ngừng để đem lại những dịch vụ tốt nhất và đảm bảo sự hài lòng tối đa.
+                    </p>
+                    <p class="text-dark"><i class="fa fa-check text-primary me-3"></i>Tiết kiệm ngân sách cho bạn</p>
+                    <p class="text-dark"><i class="fa fa-check text-primary me-3"></i>Hỗ trợ tối đa chi phí</p>
+                    <p class="text-dark"><i class="fa fa-check text-primary me-3"></i>Bảo vệ sức khỏe của bạn</p>
+                    <p class="text-dark mb-4"><i class="fa fa-check text-primary me-3"></i>Linh hoạt trong mọi điều kiện</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- About End -->
+
+    <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-xl-9">
+                    <div class="mb-5">
+                        <div class="row g-4">
+                            <div class="col-md-2 col-lg-2 col-xl-2">
+                                <div class="footer-item">
+                                    <h4 class="text-white mb-4">SITE MAP </h4>
+                                    <a href="index.html"><i class="fas fa-angle-right me-2"></i> Trang chủ</a>
+                                    <a href="service.html"><i class="fas fa-angle-right me-2"></i> Dịch vụ</a>
+                                    <a href="blog.html"><i class="fas fa-angle-right me-2"></i> Blog</a>
+                                    <a href="about.html"><i class="fas fa-angle-right me-2"></i> About Us</a>
+                                    <a href="contact.html"><i class="fas fa-angle-right me-2"></i> Liên hệ</a>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-lg-3 col-xl-3">
+                                <div class="footer-item">
+                                    <a href="index.html" class="p-0">
+                                        <h3 class="text-white"><i class="fab fa-slack me-3"></i>InsureCare</h3>
+                                        <!-- <img src="img/logo.png" alt="Logo"> -->
+                                    </a>
+                                    <p class="text-white mb-4">Công ty chúng tôi luôn đem lại các khoản hỗ trợ toàn diện đầy đủ và minh bạch nhất đến với bạn</p>
+                                    <div class="footer-btn d-flex">
+                                        <a class="btn btn-md-square rounded-circle me-3" href="#"><i class="fab fa-facebook-f"></i></a>
+                                        <a class="btn btn-md-square rounded-circle me-3" href="#"><i class="fab fa-twitter"></i></a>
+                                        <a class="btn btn-md-square rounded-circle me-3" href="#"><i class="fab fa-instagram"></i></a>
+                                        <a class="btn btn-md-square rounded-circle me-0" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-9 col-xl-7 d-flex flex-row ">
+                                <div class="col-4">
+                                    <div class="btn-xl-square bg-primary text-white rounded p-4 me-4">
+                                        <i class="fas fa-map-marker-alt fa-2x"></i>
+
+                                    </div>
+                                    <div class="py-3 ">
+                                        <h4 class="text-white">Địa chỉ</h4>
+                                        <p class="mb-0">10 Nguyễn Văn Bảo, Gò Vấp, TP.HCM</p>
+                                    </div>
+                                </div>
+
+                                <div class=" col-4 mx-5">
+                                    <div class="btn-xl-square bg-primary text-white rounded p-4 me-4">
+                                        <i class="fas fa-envelope fa-2x"></i>
+                                    </div>
+                                    <div class="py-3 ">
+                                        <h4 class="text-white">Email</h4>
+                                        <p class="mb-0">phongnguyen04@gmail.com</p>
+                                    </div>
+                                </div>
+                                <div class="col-5">
+                                    <div class="btn-xl-square bg-primary text-white rounded p-4 me-4">
+                                        <i class="fa fa-phone-alt fa-2x"></i>
+                                    </div>
+                                    <div class="py-3 ">
+                                        <h4 class="text-white">Điện thoại</h4>
+                                        <p class="mb-0">(+84) 898138562</p>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright py-4">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <span class="text-body text-xl-center "><a href="#" class="border-bottom text-white">@All right reserved NguyenTuanPhong</a></span>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script>
+        let btnf = document.getElementById('btndndk');
+        let btnf1 = document.getElementById('btndn');
+        let btnf2 = document.getElementById('btndk');
+        let login_form = document.getElementById('loginForm');
+        let reg_form = document.getElementById('registerForm');
+        // Show the login modal when "Đăng nhập/đăng kí" is clicked
+        btnf.addEventListener('click', function() {
+            login_form.style.display = 'block';
+            reg_form.style.display = 'none';
+            new bootstrap.Modal(document.getElementById('loginModal')).show();
+        });
+
+        // Show registration form and hide login form
+        function showRegisterForm() {
+            login_form.style.display = 'none';
+            reg_form.style.display = 'block';
+        }
+
+        // Show login form and hide registration form
+        function showLoginForm() {
+            login_form.style.display = 'block';
+            reg_form.style.display = 'none';
+        }
+
+        // Xử lý sự kiện đăng ký
+        document.getElementById("btndk").addEventListener("click", function() {
+            // Lấy giá trị từ form đăng ký
+            const username = document.getElementById("username").value.trim();
+            const phone = document.getElementById("phone").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value.trim();
+            const repassword = document.getElementById("repassword").value.trim();
+
+            // Kiểm tra các điều kiện đăng ký
+            const phonePattern = /^\d{9}$/; // Số điện thoại phải có đúng 9 chữ số
+            const emailPattern = /^[\w-\.]+@gmail\.com$/; // Email phải có đuôi là @gmail.com
+
+            // Kiểm tra các trường trống
+            if (!username || !phone || !email || !password || !repassword) {
+                alert("Vui lòng điền đầy đủ tất cả các trường.");
+                return;
+            }
+
+            // Kiểm tra điều kiện số điện thoại
+            if (!phonePattern.test(phone)) {
+                alert("Số điện thoại phải có đúng 9 chữ số.");
+                return;
+            }
+
+            // Kiểm tra điều kiện email
+            if (!emailPattern.test(email)) {
+                alert("Email phải có đuôi là @gmail.com.");
+                return;
+            }
+
+            // Kiểm tra mật khẩu nhập lại
+            if (password !== repassword) {
+                alert("Mật khẩu nhập lại không khớp.");
+                return;
+            }
+
+            // Lưu dữ liệu vào LocalStorage nếu đăng ký thành công
+            localStorage.setItem("username", username);
+            localStorage.setItem("password", password);
+
+            alert("Đăng ký thành công! Quý khách có thể đăng nhập ngay.");
+
+            // Tự động điền thông tin vào form đăng nhập
+            document.getElementById("usernameL").value = username;
+
+
+            // Hiển thị form đăng nhập và ẩn form đăng ký
+            showLoginForm();
+        });
+
+        // Xử lý sự kiện đăng nhập
+        document.getElementById("btndn").addEventListener("click", function() {
+            // Lấy giá trị từ form đăng nhập
+            const usernameL = document.getElementById("usernameL").value.trim();
+            const passwordL = document.getElementById("passwordL").value.trim();
+
+            // Kiểm tra các trường trống
+            if (!usernameL || !passwordL) {
+                alert("Vui lòng nhập tên đăng nhập và mật khẩu.");
+                return;
+            }
+
+            // Lấy dữ liệu từ LocalStorage
+            const savedUsername = localStorage.getItem("username");
+            const savedPassword = localStorage.getItem("password");
+
+            // Kiểm tra thông tin đăng nhập
+            if (usernameL === savedUsername && passwordL === savedPassword) {
+                alert("Đăng nhập thành công!");
+                // Thực hiện các hành động sau khi đăng nhập thành công (nếu có)
+            } else {
+                alert("Tên đăng nhập hoặc mật khẩu không đúng.");
+            }
+        });
+
+        // Chuyển đổi hiển thị giữa form đăng ký và đăng nhập
+        function showRegisterForm() {
+            document.getElementById("loginForm").style.display = "none";
+            document.getElementById("registerForm").style.display = "block";
+        }
+
+        function showLoginForm() {
+            document.getElementById("registerForm").style.display = "none";
+            document.getElementById("loginForm").style.display = "block";
+        }
+    </script>
+</body>
+
+</html>
