@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>LifeSure - Life Insurance Website Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:slnt,wght@-10..0,100..900&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link rel="stylesheet" href="lib/animate/animate.min.css" />
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Xin chào Quý khách!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Login Form -->
+                    <div id="loginForm">
+                        <h3>ĐĂNG NHẬP</h3>
+                        <form>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" id="usernameL" placeholder="Tên đăng nhập" required>
+                            </div>
+                            <div class="mb-3 position-relative">
+                                <input type="password" class="form-control" id="passwordL" placeholder="Mật khẩu" required>
+
+                            </div>
+                            <button type="button" class="btn btn-primary" id="btndn">Đăng nhập</button>
+                        </form>
+                        <div class="mt-3 links">
+                            <a onclick="showRegisterForm()" style="cursor: pointer" class="nav-item">Quý khách chưa đăng ký tài khoản? Đăng ký</a>
+                        </div>
+                    </div>
+
+                    <!-- Registration Form -->
+                    <div id="registerForm" style="display: none;">
+                        <h3>ĐĂNG KÝ</h3>
+                        <form>
+                            <div class="mb-3" id="ref">
+                                <input type="text" class="form-control" id="username" placeholder="Tên đăng nhập" required>
+                                <span id="usernameError" class="error-message"></span>
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" id="phone" placeholder="Số điện thoại" required>
+                                <span id="phoneError" class="error-message"></span>
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" class="form-control" id="email" placeholder="Email" required>
+                                <span id="emailError" class="error-message"></span>
+                            </div>
+                            <div class="mb-3 position-relative">
+                                <input type="password" class="form-control" id="password" placeholder="Mật khẩu" required>
+                                <span id="passwordError" class="error-message"></span>
+                            </div>
+                            <div class="mb-3 position-relative">
+                                <input type="text" class="form-control" id="repassword" placeholder="Nhập lại mật khẩu" required>
+                                <span id="repasswordError" class="error-message"></span>
+                            </div>
+                            <button type="button" class="btn btn-primary" id="btndk">Đăng ký</button>
+                        </form>
+                        <div class="mt-3 links">
+                            <a onclick="showLoginForm()" style="cursor: pointer" class="nav-item">Quay lại Đăng nhập</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid nav-bar px-0 px-lg-4 py-lg-0">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a href="index.html" class="navbar-brand p-0">
+                    <h1 class="text-primary mb-0"><i class="fab fa-slack me-2"></i> InsureCare</h1>
+                    <!-- <img src="img/logo.png" alt="Logo"> -->
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarCollapse">
+                    <div class="navbar-nav w-100 mx-auto d-flex align-items-center justify-content-between ">
+                        <a href="index.html" class="nav-item nav-link   ">Trang chủ</a>
+                        <a href="service.html" class="nav-item nav-link">Dịch vụ</a>
+                        <a href="blog.html" class=" nav-item nav-link">Blog</a>
+                        <a href="about.html" class=" nav-item nav-link">About us</a>
+                        <a href="contact.html" class="nav-item nav-link active">Liên hệ</a>
+                        <div class="nav-btn">
+                            <input type="text" class="form-control">
+                            <button class="btn-search btn btn-primary btn-md-square rounded-circle flex-shrink-0" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search"></i></button>
+                        </div>
+
+                        <a href="#" id="btndndk" class="nav-item nav-link">Đăng nhập/đăng kí <i class="bi bi-person-circle"></i></a>
+                    </div>
+                </div>
+                <a href="book.html"><button class="btn-link btn btn-primary mx-3 ">Đặt bảo hiểm !</button></a>
+
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar & Hero End -->
+
+
+
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-breadcrumb">
+        <div class="container text-center py-5" style="max-width: 900px;">
+            <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">LIÊN HỆ</h4>
+
+        </div>
+    </div>
+    <!-- Header End -->
+
+
+    <!-- Contact Start -->
+    <div class="container-fluid contact bg-light py-5">
+        <div class="container py-5">
+            <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                <h4 class="text-primary">LIÊN HỆ</h4>
+                <h1 class="display-4 mb-4">Chúng tôi luôn phản hồi feedback của bạn</h1>
+            </div>
+            <div class="row g-5">
+                <div class="col-xl-6 wow fadeInLeft" data-wow-delay="0.2s">
+                    <div class="contact-img d-flex justify-content-center">
+                        <div class="contact-img-inner">
+                            <img src="img/contact-img.png" class="img-fluid w-100" alt="Image">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 wow fadeInRight" data-wow-delay="0.4s">
+                    <div>
+                        <h4 class="text-primary my-5">Phản hồi tại đây</h4>
+                        <form id="LH">
+                            <div class="row g-3">
+
+                                <div class="col-lg-12 col-xl-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control border-0" id="nameLH" placeholder="Your Name">
+                                        <label for="name">Họ & Tên</label>
+                                        <span id="tlhlError" class="error-message"></span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-xl-6">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control border-0" id="emailLH" placeholder="Your Email">
+                                        <label for="email">Email</label>
+                                        <span id="elhError" class="error-message"></span>
+                                    </div>
+                                </div>
+                                <div class="col-12 ">
+                                    <div class="form-floating">
+                                        <input type="phone" class="form-control border-0" id="phoneLH" placeholder="Phone">
+                                        <label for="phone">Số điện thoại</label>
+                                        <span id="phonelhError" class="error-message"></span>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <textarea class="form-control border-0" placeholder="Leave a message here" id="messageLH" style="height: 120px"></textarea>
+                                        <label for="message">Message</label>
+                                    </div>
+
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-primary w-100 py-3" id="gui">GỬI</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div>
+                        <div class="row align-content-center d-flex">
+                            <div class=" col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
+                                <div class="contact-add-item">
+                                    <div class="contact-icon text-primary mb-4">
+                                        <i class="fas fa-map-marker-alt fa-2x"></i>
+                                    </div>
+                                    <div>
+                                        <h4>Địa chỉ</h4>
+                                        <p class="mb-0">10 Nguyễn Văn Bảo, Gò Vấp, TP.HCM</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=" col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
+                                <div class="contact-add-item">
+                                    <div class="contact-icon text-primary mb-4">
+                                        <i class="fas fa-envelope fa-2x"></i>
+                                    </div>
+                                    <div>
+                                        <h4>Email</h4>
+                                        <p class="mb-0">phongnguyen04@gmail.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=" col-lg-4 wow fadeInUp" data-wow-delay="0.6s">
+                                <div class="contact-add-item">
+                                    <div class="contact-icon text-primary mb-4">
+                                        <i class="fa fa-phone-alt fa-2x"></i>
+                                    </div>
+                                    <div>
+                                        <h4>Điện thoại</h4>
+                                        <p class="mb-0">(+84) 898138562</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="rounded">
+
+                    </div><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.8582383423864!2d106.68197447769602!3d10.82215886181597!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174deb3ef536f31%3A0x8b7bb8b7c956157b!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2hp4buHcCBUUC5IQ00!5e0!3m2!1svi!2s!4v1730607171505!5m2!1svi!2s"
+                        class="rounded w-100" style="height: 400px;"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-xl-9">
+                    <div class="mb-5">
+                        <div class="row g-4">
+                            <div class="col-md-2 col-lg-2 col-xl-2">
+                                <div class="footer-item">
+                                    <h4 class="text-white mb-4">SITE MAP </h4>
+                                    <a href="index.html"><i class="fas fa-angle-right me-2"></i> Trang chủ</a>
+                                    <a href="service.html"><i class="fas fa-angle-right me-2"></i> Dịch vụ</a>
+                                    <a href="blog.html"><i class="fas fa-angle-right me-2"></i> Blog</a>
+                                    <a href="about.html"><i class="fas fa-angle-right me-2"></i> About Us</a>
+                                    <a href="contact.html"><i class="fas fa-angle-right me-2"></i> Liên hệ</a>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-lg-3 col-xl-3">
+                                <div class="footer-item">
+                                    <a href="index.html" class="p-0">
+                                        <h3 class="text-white"><i class="fab fa-slack me-3"></i>InsureCare</h3>
+                                        <!-- <img src="img/logo.png" alt="Logo"> -->
+                                    </a>
+                                    <p class="text-white mb-4">Công ty chúng tôi luôn đem lại các khoản hỗ trợ toàn diện đầy đủ và minh bạch nhất đến với bạn</p>
+                                    <div class="footer-btn d-flex">
+                                        <a class="btn btn-md-square rounded-circle me-3" href="#"><i class="fab fa-facebook-f"></i></a>
+                                        <a class="btn btn-md-square rounded-circle me-3" href="#"><i class="fab fa-twitter"></i></a>
+                                        <a class="btn btn-md-square rounded-circle me-3" href="#"><i class="fab fa-instagram"></i></a>
+                                        <a class="btn btn-md-square rounded-circle me-0" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-9 col-xl-7 d-flex flex-row ">
+                                <div class="col-4">
+                                    <div class="btn-xl-square bg-primary text-white rounded p-4 me-4">
+                                        <i class="fas fa-map-marker-alt fa-2x"></i>
+
+                                    </div>
+                                    <div class="py-3 ">
+                                        <h4 class="text-white">Địa chỉ</h4>
+                                        <p class="mb-0">10 Nguyễn Văn Bảo, Gò Vấp, TP.HCM</p>
+                                    </div>
+                                </div>
+
+                                <div class=" col-4 mx-5">
+                                    <div class="btn-xl-square bg-primary text-white rounded p-4 me-4">
+                                        <i class="fas fa-envelope fa-2x"></i>
+                                    </div>
+                                    <div class="py-3 ">
+                                        <h4 class="text-white">Email</h4>
+                                        <p class="mb-0">phongnguyen04@gmail.com</p>
+                                    </div>
+                                </div>
+                                <div class="col-5">
+                                    <div class="btn-xl-square bg-primary text-white rounded p-4 me-4">
+                                        <i class="fa fa-phone-alt fa-2x"></i>
+                                    </div>
+                                    <div class="py-3 ">
+                                        <h4 class="text-white">Điện thoại</h4>
+                                        <p class="mb-0">(+84) 898138562</p>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright py-4">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <span class="text-body text-xl-center "><a href="#" class="border-bottom text-white">@All right reserved NguyenTuanPhong</a></span>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script src="js/log.js"></script>
+    <script>
+        document.getElementById("gui").addEventListener("click", function() {
+            let isValid = true; // Giả định ban đầu là hợp lệ
+            event.preventDefault();
+            // Xóa thông báo lỗi cũ
+            document.querySelectorAll(".error-message").forEach(el => el.innerText = "");
+
+            // Lấy giá trị từ các trường
+            const nameLH = document.getElementById("nameLH").value.trim();
+            const emailLH = document.getElementById("emailLH").value.trim();
+            const phoneLH = document.getElementById("phoneLH").value.trim();
+            const messageLH = document.getElementById("messageLH").value.trim();
+
+            // Kiểm tra Họ & Tên (2 từ viết hoa)
+            const namePattern = /^[A-Z][a-z]*\s[A-Z][a-z]*$/;
+            if (!namePattern.test(nameLH)) {
+                document.getElementById("tlhlError").innerText = "Họ tên phải có 2 từ và mỗi từ viết hoa chữ cái đầu.";
+                isValid = false;
+            }
+
+            // Kiểm tra Email (đuôi @gmail.com)
+            const emailPattern = /^[\w-\.]+@gmail\.com$/;
+            if (!emailPattern.test(emailLH)) {
+                document.getElementById("elhError").innerText = "Email phải có đuôi @gmail.com.";
+                isValid = false;
+            }
+
+            // Kiểm tra Số điện thoại (9 chữ số)
+            const phonePattern = /^\d{9}$/;
+            if (!phonePattern.test(phoneLH)) {
+                document.getElementById("phonelhError").innerText = "Số điện thoại phải có đúng 9 chữ số.";
+                isValid = false;
+            }
+
+
+            // Hiển thị thông báo nếu hợp lệ
+            if (isValid) {
+                alert("Thông tin của bạn đã được gửi thành công!");
+                // Reset form nếu cần
+                document.getElementById("LH").reset();
+            }
+
+        });
+    </script>
+
+</body>
+
+</html>
